@@ -1,0 +1,20 @@
+
+/*comman title*/
+.comman-title{
+    display: inline-block;
+    font-size: 3rem;
+    font-weight: 500;
+    text-shadow: 2px 2px 5px #aaa;
+    transition: all .5s;
+}
+.comman-title:first-letter{
+    color: red;
+    font-family: 'Great Vibes', cursive;
+    font-size: 6rem;
+    font-style: normal;
+    margin-right: 10px;
+}
+.comman-title:hover{
+    transform: translate(-5px,-3px);
+    text-shadow: 2px 5px 20px #aaa;
+}

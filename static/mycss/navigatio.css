@@ -1,0 +1,46 @@
+/*navbar*/
+.nav-menu {
+    background: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .5));
+    padding: 30px;
+    transition: all .5s;
+}
+
+.menu-item {
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: #eee;
+}
+.nav-active{
+    color: red;
+}
+.img-size1{
+    width: 60px;
+}
+.menu-item:hover {
+    /*color: #70aed2;*/
+    color: red;
+    transition: color .5s;
+}
+
+.line1, .line2, .line3 {
+    width: 23px;
+    height: 3px;
+    margin: 5px;
+}
+
+.change .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.change .line2 {
+    opacity: 0;
+}
+
+.change .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.custome-navebar {
+    padding: 5px 30px;
+    background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .7));
+}

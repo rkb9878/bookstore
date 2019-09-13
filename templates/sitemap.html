@@ -1,0 +1,85 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SiteMap</title>
+    {% include 'headerfile.html' %}
+    <link rel="stylesheet" href="{% static 'mycss/' %}">
+    <style>
+        body {
+            /*background: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.8)),url("../images/header-bg.jpeg") fixed center no-repeat;*/
+            font-family: 'Montserrat', sans-serif;
+            background: #eee;
+            overflow-x: hidden;
+        }
+        ul{
+            list-style-type: square;
+        }
+        ul a{
+            color: red;
+            font-weight: bold;
+            font-size: 22px;
+        }
+        ul a:hover{
+            color:#fcba03;
+        }
+        ul .nolink{
+            font-size: 18px;
+            color: #af06c9;
+        }
+
+    </style>
+</head>
+<body>
+{% include 'navigation.html' %}
+<header>
+    <div style="margin-top: 120px">
+        <div class="text-center">
+            <h1 class="comman-title">Site-Map</h1>
+        </div>
+    </div>
+    <div class="container">
+        <hr class="bg-danger">
+        <div class="row border mb-5 bg-white">
+            <div class="col-4">
+                <ul>
+                    <li><a href="/">Home</a>
+                        <ul class="nolink">
+                            <li>Our Services</li>
+                            <li>Become Our Member</li>
+                            <li>Socical Media</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-4">
+                <ul>
+                    <li><a href="cataloguesearchpage">Catalogue Search</a>
+                        <ul class="nolink">
+                            <li>All books</li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="col-4">
+                <ul>
+                    <li><a href="CatalogueMaintenancePage">Catalogue Maintenance</a>
+                        <ul class="nolink">
+                            <li>Add Catalogue</li>
+                            <li>Update Catalogue</li>
+                            <li>View Catalogue</li>
+                            <li>Delete Catalogue</li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+{% include 'footer.html' %}
+</body>
+</html>

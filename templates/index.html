@@ -1,0 +1,152 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'mycss/banner.css' %}">
+    <link rel="stylesheet" href="{% static 'mycss/gallery.css' %}">
+    <meta charset="UTF-8">
+    <title>BookShop</title>
+    {% include 'headerfile.html' %}
+    <style>
+        body {
+            /*background: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.8)),url("../images/header-bg.jpeg") fixed center no-repeat;*/
+            font-family: 'Montserrat', sans-serif;
+            background: #eee;
+            overflow-x: hidden;
+        }
+
+        /*header*/
+        header {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .5)), url("{% static 'images/jez-timms-_ubXaS2zcs4-unsplash.jpg' %}") no-repeat center center/cover;
+        }
+
+        .ourservices {
+            background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .8)), url("{% static 'images/header-bg.jpeg' %}") fixed center no-repeat;
+        }
+
+        .underline {
+            width: 150px;
+            border: 3px solid #eee;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<header>
+    {% include 'navigation.html' %}
+    <!--    banner-->
+    <div class="text-light text-md-right text-center banner">
+        <h1 class="display-5 banner-heading comman-title">Fitzroy Cataloic BookShop</h1>
+        <p class="lead banner-par">Design by <span class="font-weight-bold text-uppercase">Bharti</span></p>
+    </div>
+    <!--    end of Banner-->
+</header>
+
+
+<!--gallery-->
+<section class="gallery">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center py-5">
+                <h1 class="text-secondary text-uppercase font-italic comman-title">The Best Libraries in the world</h1>
+            </div>
+        </div>
+        <div class="row mb-4 first-row">
+            <div class="col-lg-3 col-sm-6 col-10 mx-auto">
+                <a href="{% static 'libraries/library1.jpg' %}" data-lightbox="library"
+                   data-title="Clementinum, prague">
+                    <img src="{% static 'libraries/library1.jpg' %}" alt="img" class="img-thumbnail gallery-img">
+                </a>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-10 mx-auto">
+                <a href="{% static 'libraries/library2.jpg' %}" data-lightbox="library"
+                   data-title="Bibliotheca Alexandrina, Alexandria, Egypt">
+                    <img src="{% static 'libraries/library2.jpg' %}" alt="img" class="img-thumbnail gallery-img">
+                </a>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-10 mx-auto">
+                <a href="{% static 'libraries/library3.jpg' %}" data-lightbox="library"
+                   data-title="Teinity College old Library, Dublin">
+                    <img src="{% static 'libraries/library3.jpg' %}" alt="img" class="img-thumbnail gallery-img">
+                </a>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-10 mx-auto">
+                <a href="{% static 'libraries/library4.jpg' %}" data-lightbox="library"
+                   data-title="Central Library of Vancouver, Canada">
+                    <img src="{% static 'libraries/library4.jpg' %}" alt="img" class="img-thumbnail gallery-img">
+                </a>
+            </div>
+        </div>
+        <div class="row mb-4 second-row">
+            <div class="col-lg-3 col-sm-6 col-10 mx-auto">
+                <a href="{% static 'libraries/library5.jpg' %}" data-lightbox="library"
+                   data-title="Library of Congress, Washington, D.C.">
+                    <img src="{% static 'libraries/library5.jpg' %}" alt="img" class="img-thumbnail gallery-img">
+                </a>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-10 mx-auto">
+                <a href="{% static 'libraries/library6.jpg' %}" data-lightbox="library"
+                   data-title="New York Public Library">
+                    <img src="{% static 'libraries/library6.jpg' %}" alt="img" class="img-thumbnail gallery-img">
+                </a>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-10 mx-auto">
+                <a href="{% static 'libraries/library7.jpg' %}" data-lightbox="library" data-title="Marcian Library">
+                    <img src="{% static 'libraries/library7.jpg' %}" alt="img" class="img-thumbnail gallery-img">
+                </a>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-10 mx-auto">
+                <a href="{% static 'libraries/library8.jpg' %}" data-lightbox="library"
+                   data-title="Seattle Public Library's">
+                    <img src="{% static 'libraries/library8.jpg' %}" alt="img" class="img-thumbnail gallery-img">
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!--end gallery-->
+
+<section class="ourservices">
+    <div class="container-fluid">
+        <!--title-->
+        <div class="row text-light text-center">
+            <div class="col m-4 ">
+                <h1 class="text-uppercase display-4 mb-2 comman-title">Our Services</h1>
+                <div class="underline mb-4"></div>
+                <p class="lead">
+                    In This Web-Site, We provide Books, Audio-Books and Vedio
+                </p>
+            </div>
+        </div>
+        <!--end of title-->
+        <div class="row my-5">
+            <div class="col-md-4 text-center">
+                <i class="fas fa-book-reader fa-5x text-danger"></i>
+                <h1 class="text-light mb-3"><u>Books</u></h1>
+                <p class="text-white">I find television very educating. Every time somebody turns on the set, I go into
+                    the other room and
+                    read a book.” – Groucho Marx</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <i class="fas fa-file-audio fa-5x text-danger"></i>
+                <h1 class="text-light mb-3"><u>Audio Books</u></h1>
+                <p class="text-white">If you’re looking for a great way to fit more books into your life, try picking up
+                    an audiobook. You can listen to it on your commute, on vacation, or just at home while you’re doing
+                    other things.</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <i class="fas fa-file-video fa-5x text-danger"></i>
+                <h1 class="text-light mb-3"><u>Videos</u></h1>
+                <p class="text-white">video in education can improve learning outcomes, help you reach a larger
+                    audience, and grow ... Between equipment, services, and software, costs add up fast—don't they? ...
+                    It allows students to watch lectures at their own pace. To learn more about flipped
+                    classroom</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!--services-->
+{% include 'footer.html' %}
+</body>
+</html>

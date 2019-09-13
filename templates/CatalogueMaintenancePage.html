@@ -1,0 +1,242 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Catalogue Maintenance</title>
+    {% include 'headerfile.html' %}
+    <style>
+        body{
+            background:#6d809e;
+        }
+    </style>
+</head>
+<body>
+{% include 'navigation.html' %}
+<div class="container-fluid " style="margin-top: 100px">
+    <div class="jumbotron">
+        <h1 class="text-center"><u><strong>Catalogue Maintenance Page</strong></u></h1>
+    </div>
+</div>
+{#add CatalogueMaintenance#}
+<div class="container">
+    <div class="row bg-dark">
+        <img src="{% static 'images/Untitled-3.png' %}" alt="" style=" width: 100px" class="btn" data-toggle="modal"
+             title="Add Catalogue" data-target="#myaddModal">
+        <h3 class="text-light mt-4 text-uppercase" data-toggle="modal"
+            title="Add Catalogue"
+            data-target="#myModal">Add Books In Catalogue</h3>
+    </div>
+</div>
+{#add catalog end#}
+
+{#view catalog#}
+<div class="container mt-4">
+    <h1 class="text-center text-white mb-5"><u>View</u>-<u>Catalogue</u></h1>
+    <div class="row col-sm-12">
+        <div id="tablecontent" class="table-responsive">
+
+        </div>
+    </div>
+</div>
+{#viewcatalog#}
+
+
+{#addmodal#}
+<div class="modal" id="myaddModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title">Add catalogue</h1>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            {#modal popup body#}
+            <div class="modal-body">
+                <form id="formCata" action="">
+                    <div class="row form-group">
+                        <label for="title" class="col-md-4 col-12 text-center"><b>Title:-</b></label>
+                        <div class="col-md-7 col-12">
+                            <input type="text" class="form-control " id="title" name="title"
+                                   placeholder="Enter The Titile" Data-rule-required="true">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label for="cateogry" class="col-md-4 col-12 text-center"><b>Category:-</b></label>
+                        <div class="col-md-7 col-12">
+                            <select Data-rule-required="true" class="form-control" name="cateogry" id="cateogry">
+                                <option value="">Select Cateogry</option>
+                                <option value="books">Books</option>
+                                <option value="audio Books">Audio Books</option>
+                                <option value="vedio">Vedio</option>
+                                <option value="music">Music</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label for="artist" class="col-md-4 col-12 text-center"><b>Artist(s):-</b></label>
+                        <div class="col-md-7 col-12">
+                            <input type="text" class="form-control " id="artist" name="artist"
+                                   placeholder="Enter The Author(s) / Artist(s)" Data-rule-required="true">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label for="publisher" class="col-md-4 col-sm-12 text-center"><b>Publisher:-</b></label>
+                        <div class=" col-md-7 col-sm-12">
+                            {#                            <input type="text" class="form-control" id="publisher" name="publisher"#}
+                            {#                                   placeholder="Enter The Publisher" Data-rule-required="true">#}
+                            <select name="publisher" id="publisher" Data-rule-required="true" class="form-control">
+                                <option value="">Select Publisher</option>
+                                <option value="Harper Collins">Harper Collins</option>
+                                <option value="Penguins">Penguins</option>
+                                <option value="St Pauls Publication">St Pauls Publication</option>
+                                <option value="Franciscan Media">Franciscan Media</option>
+                                <option value="Orbis">Orbis</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label for="price" class="col-md-4 col-12 text-center"><b>Price:-</b></label>
+                        <div class="col-md-7 col-12">
+                            <input type="number" class="form-control " id="price" name="price"
+                                   placeholder="Enter The price" Data-rule-required="true">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label for="quantity" class="col-md-4 col-12 text-center"><b>Quantity:-</b></label>
+                        <div class="col-md-7 col-12">
+                            <input type="number" class="form-control " id="quantity" name="quantity"
+                                   placeholder="Enter The Quantity" Data-rule-required="true">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label for="image" class="col-md-4 col-12 text-center"><b>Image:-</b></label>
+                        <div class="col-md-7 col-12">
+                            <input type="file" class="form-control" id="image" name="image"
+                                   placeholder="Enter The Quantity" Data-rule-required="true">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center m-3">
+                        <button type="reset" class="btn btn-warning  mr-2">Reset</button>
+                        <button type="button" class="btn btn-success mr-2" onclick="addcataloge()">Submit</button>
+                    </div>
+                </form>
+            </div>
+            {#modal popup bodyend#}
+            <div class="modal-footer">
+                <button class="btn close" type="button" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{#end modal#}
+
+{#update modal#}
+<div class="modal" id="updateModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title">Add catalogue</h1>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            {#modal popup body#}
+            <div class="modal-body">
+                <form id="formupCata" action="">
+                    <div class="row form-group">
+                        <label for="title" class="col-md-4 col-12 text-center"><b>ISBN:-</b></label>
+                        <div class="col-md-7 col-12">
+                            <input type="text" class="form-control " id="ISBN" name="ISBN"
+                                   placeholder="Enter The Titile" readonly Data-rule-required="true">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label for="title" class="col-md-4 col-12 text-center"><b>Title:-</b></label>
+                        <div class="col-md-7 col-12">
+                            <input type="text" class="form-control " id="titleedit" name="title"
+                                   placeholder="Enter The Titile" Data-rule-required="true">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label for="cateogry" class="col-md-4 col-12 text-center"><b>Category:-</b></label>
+                        <div class="col-md-7 col-12">
+                            <select Data-rule-required="true" class="form-control" name="cateogryedit"
+                                    id="cateogryedit">
+                                <option value="">Select Cateogry</option>
+                                <option value="books">Books</option>
+                                <option value="audio Books">Audio Books</option>
+                                <option value="vedio">Vedio</option>
+                                <option value="music">Music</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label for="artist" class="col-md-4 col-12 text-center"><b>Artist(s):-</b></label>
+                        <div class="col-md-7 col-12">
+                            <input type="text" class="form-control " id="artistedit" name="artist"
+                                   placeholder="Enter The Author(s) / Artist(s)" Data-rule-required="true">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label for="publisher" class="col-md-4 col-sm-12 text-center"><b>Publisher:-</b></label>
+                        <div class=" col-md-7 col-sm-12">
+                            <select name="publisher" id="publisheredit" Data-rule-required="true"
+                                    class="form-control">
+                                <option value="">Select Publisher</option>
+                                <option value="Harper Collins">Harper Collins</option>
+                                <option value="Penguins">Penguins</option>
+                                <option value="St Pauls Publication">St Pauls Publication</option>
+                                <option value="Franciscan Media">Franciscan Media</option>
+                                <option value="Orbis">Orbis</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label for="price" class="col-md-4 col-12 text-center"><b>Price:-</b></label>
+                        <div class="col-md-7 col-12">
+                            <input type="number" class="form-control " id="priceedit" name="priceedit"
+                                   placeholder="Enter The price" Data-rule-required="true">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label for="quantity" class="col-md-4 col-12 text-center"><b>Quantity:-</b></label>
+                        <div class="col-md-7 col-12">
+                            <input type="number" class="form-control " id="quantityedit" name="quantityedit"
+                                   placeholder="Enter The Quantity" Data-rule-required="true">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label for="image" class="col-md-4 col-12 text-center"><b>Image:-</b></label>
+                        <div class="col-md-7 col-12">
+                            <input type="file" id="imgedit" name="imgedit">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-7 col-12 offset-sm-5">
+                            <img id="img_edit" alt="img" width="100">
+                        </div>
+                        {#                        <img src="{% static 'media/Sites-to-Watch-Movies-Online-600x400.jpg' %}" alt="">#}
+                    </div>
+                    <div class="d-flex justify-content-center m-3">
+                        {#                            <button type="reset" class="btn btn-warning  mr-2">Reset</button>#}
+                        <button type="button" class="btn btn-success mr-2" onclick="udatecatalog()">UpDate</button>
+                    </div>
+                </form>
+            </div>
+            {#modal popup bodyend#}
+            <div class="modal-footer">
+                <button class="btn close" type="button" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{#end model#}
+
+{% include 'footer.html' %}
+
+<script>
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+        viewcatalog();
+    });
+</script>
+</body>
+</html>

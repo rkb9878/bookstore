@@ -1,0 +1,42 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Catalogue Search</title>
+    {% include 'headerfile.html' %}
+    <link rel="stylesheet" href="{% static 'mycss/cataloguesearch.css' %}">
+    <style>
+        body {
+            /*background: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.8)),url("../images/header-bg.jpeg") fixed center no-repeat;*/
+            font-family: 'Montserrat', sans-serif;
+            background: #eee;
+            overflow-x: hidden;
+        }
+
+        /*header*/
+        header {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .5)), url("{% static 'images/jez-timms-_ubXaS2zcs4-unsplash.jpg' %}") no-repeat center center/cover;
+        }
+    </style>
+</head>
+<body>
+{% include 'navigation.html' %}
+<header>
+    <form action="searchResultActionPage" method="get">
+        <div class="center">
+            <input type="text" name="search" id="search" class="form-control w-10 text-primary font-weight-bold"
+                   placeholder="Search By Category or publisher" data-rule-required="true">
+            <button class="btn btn-outline-danger text-white w-25" type="submit">
+                <strong class="fas fa-search fa-2x"></strong>
+            </button>
+        </div>
+    </form>
+</header>
+
+{% include 'footer.html' %}
+<script src="{% static 'myjs/searchPageAuto.js' %}"></script>
+
+</body>
+</html>

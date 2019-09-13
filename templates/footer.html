@@ -1,0 +1,76 @@
+{% load staticfiles %}
+
+
+<!--foooter-->
+<footer class="bg-dark">
+    <div class="container">
+        <div class="row pb-3">
+            <div class="col-12 p-4 text-center text-light">
+                <h1>Become Our Member</h1>
+            </div>
+            <div class="col-sm-10 col-12 m-auto">
+                <form class="form-inline border rounded mb-3 p-5" action="">
+                    <input type="email" placeholder="Email" class="form-control w-50 m-auto">
+                    <button type="button" class="btn btn-outline-danger w-25 m-auto">Send</button>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                <div class="mb-2">
+                    <a href="https://www.facebook.com/" target="_blank" class="mx-sm--4 mx-2"><i class="fab fa-facebook-square fa-2x text-primary"></i></a>
+                    <a href="https://twitter.com" target="_blank" class="mx-sm--4 mx-2"><i class="fab fa-twitter fa-2x text-info"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank" class="mx-sm--4 mx-2"><i class="fab fa-instagram fa-2x text-danger"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank" class="mx-sm--4 mx-2"><i class="fab fa-linkedin fa-2x text-info"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid p-3">
+        <div class="row">
+            <div class="col mb-4">
+                <ul class="nav justify-content-center nav-tabs">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link text-light">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="sitemapepage" class="nav-link text-light">Site Map</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="cataloguesearchpage" class="nav-link text-light">Catalogue Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="CatalogueMaintenancePage" class="nav-link text-light">Catalogue Maintenance</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-light text-center">
+                <p>&copy; Copyright 2019. Made by Bharti</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!--end footer-->
+
+
+
+{#script file#}
+<script src="{% static 'js/jquery-3.4.1.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<script src="{% static 'dist/jquery.validate.js' %}"></script>
+<script src="{% static 'myjs/myjsfile.js' %}"></script>
+<script src="{% static 'lightbox/dist/js/lightbox.js' %}"></script>
+<script src="{% static 'myjs/Catalogue.js' %}"></script>
+<script src="{% static 'ui/jquery-ui.js' %}"></script>
+
+
+<style>
+    .error {
+        color: red;
+    }
+</style>
+{#end script file#}

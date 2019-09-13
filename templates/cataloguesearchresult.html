@@ -1,0 +1,95 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    {% include 'headerfile.html' %}
+    <link rel="stylesheet" href="{% static 'mycss/effectonfont.css' %}">
+</head>
+<body>
+{% include 'navigation.html' %}
+<div class="container" style="margin-top: 100px">
+    <div class="text-center">
+        <h1 class="comman-title ">Books</h1>
+    </div>
+    {% if  data.0.nodata %}
+        <h4 class="mb-5"><b><u>Result Found</u> : </b>0</h4>
+    {% else %}
+        <h4 class="mb-5"><b><u>Result Found</u> : </b>{{ number }}</h4>
+    {% endif %}
+
+    <div class="row">
+        {% for foo in data %}
+            {% if foo.nodata %}
+                <div class="text-center col-md-12"><h1> {{ foo.nodata }} </h1></div>
+                <div class="text-center col-md-12">
+                    <a href="cataloguesearchpage">
+                        <button class="btn btn-outline-primary w-25 mb-5"><b class="h5">Search</b> <strong
+                                class="fas fa-search"></strong></button>
+                    </a>
+                </div>
+            {% else %}
+                {% if foo.quantity < 5 %}
+                    <div class=" col-md-4  mb-4">
+                        <div class="card bg-light text-dark">
+                            <div class="card-header text-center">
+                                <h5 class="text-danger"><u>{{ foo.title }}</u></h5>
+                                <p class="text-dark">Author:- <b>{{ foo.author }}</b></p>
+                            </div>
+                            <div class="card-body bg-white text-center">
+                                <p class="text-dark">publisher:- <b>{{ foo.publisher }}</b></p>
+                                <img src="{% static 'media/' %}{{ foo.image }}" alt="" style="width: 100px;height:150px">
+                                <p class="text-dark">Category:- <b>{{ foo.category }}</b></p>
+                                <p class="text-danger font-weight-bold">quantity:- <b>{{ foo.quantity }}</b></p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="row">
+                                    <div class="col-sm-7">
+                                        <p class="text-dark"><u
+                                                style="font-size: 18px">Price</u>:-<b>{{ foo.price }}$</b>
+                                        </p>
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <button class="btn btn-dark"><b>Buy Now</b></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class=" col-md-4  mb-4">
+                        <div class="card bg-danger text-dark">
+                            <div class="card-header text-center">
+                                <h5 class="text-white"><u>{{ foo.title }}</u></h5>
+                                <p class="text-dark">Author:- <b>{{ foo.author }}</b></p>
+                            </div>
+                            <div class="card-body bg-white text-center">
+                                <p class="text-dark">publisher:- <b>{{ foo.publisher }}</b></p>
+                                <img src="{% static 'media/' %}{{ foo.image }}" alt="" style="width: 100px;height: 150px">
+                                <p class="text-dark">Category:- <b>{{ foo.category }}</b></p>
+                                <p class="text-dark font-weight-bold">quantity:- <b>{{ foo.quantity }}</b></p>
+
+                            </div>
+                            <div class="card-footer">
+                                <div class="row">
+                                    <div class="col-sm-7">
+                                        <p class="text-dark"><u
+                                                style="font-size: 18px">Price</u>:-<b>{{ foo.price }}$</b>
+                                        </p>
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <button class="btn btn-dark"><b>Buy Now</b></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% include 'footer.html' %}
+</body>
+</html>
